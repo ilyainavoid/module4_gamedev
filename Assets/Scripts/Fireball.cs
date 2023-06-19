@@ -17,7 +17,10 @@ public class Fireball : MonoBehaviour
             case "Wall":
                 Destroy(gameObject);
                 break;
-           
+           case "Enemy":
+               Destroy(gameObject);
+               Destroy(other.gameObject );
+               break;
         }
     }
 }
