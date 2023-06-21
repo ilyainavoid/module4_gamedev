@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1502863105693848430}
   - component: {fileID: 3135015587362220390}
-  - component: {fileID: 770343748549854311}
   - component: {fileID: 1834170297542138069}
+  - component: {fileID: 770343748549854311}
   - component: {fileID: -78430951897257974}
   m_Layer: 0
   m_Name: SigmaEnemy
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3135015587362220390
 SpriteRenderer:
@@ -87,21 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &770343748549854311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7998491976358027863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b403448449eb3e349b7e32ac6880d0c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3929060646202838298, guid: 97a84f617df904128a1ea6edc356ddda, type: 3}
-  speed: 3
-  distanceBetween: 10
 --- !u!61 &1834170297542138069
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,6 +132,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2549531, y: 1.6289275}
   m_EdgeRadius: 0
+--- !u!114 &770343748549854311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7998491976358027863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b403448449eb3e349b7e32ac6880d0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3929060646202838298, guid: 97a84f617df904128a1ea6edc356ddda, type: 3}
+  speed: 3
+  distanceBetween: 10
 --- !u!114 &-78430951897257974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,5 +159,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4c74b374f1a499d89123fbbbb54758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: {fileID: 2907976113677595920, guid: 97a84f617df904128a1ea6edc356ddda, type: 3}
+  playerHealth: {fileID: 2907976113677595920, guid: 97a84f617df904128a1ea6edc356ddda, type: 3}
   damage: 5
