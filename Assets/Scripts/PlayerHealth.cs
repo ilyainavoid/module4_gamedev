@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-
+    private HealthBar bar;
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
+
     void Start()
     {
+        bar = GetComponent<HealthBar>();
+        bar.SetMaxHealth(maxHealth);
         currentHealth = maxHealth;
     }
 
