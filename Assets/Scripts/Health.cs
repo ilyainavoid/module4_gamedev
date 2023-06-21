@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-
+    private HealthBar bar;
     public int maxHealth = 100;
     public int currentHealth;
-
+    
     void Start()
     {
+        bar = GetComponent<HealthBar>();
+        bar.SetMaxHealth(maxHealth);
         currentHealth = maxHealth;
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        bar.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
             //dead
