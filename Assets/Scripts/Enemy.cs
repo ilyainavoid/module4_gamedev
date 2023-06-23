@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private float health, maxHealth;
     [SerializeField] private EnemyHealthBar healthBar;
-
+    [SerializeField] private Spawner spawner;
     private void Awake()
     {
         healthBar = GetComponentInChildren<EnemyHealthBar>();
@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
         {
             //animation
             Destroy(gameObject);
+            spawner.IncreaseKillCount();
         }
     }
 }
