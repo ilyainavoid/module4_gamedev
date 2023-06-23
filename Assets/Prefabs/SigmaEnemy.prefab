@@ -434,7 +434,7 @@ Transform:
   m_Children:
   - {fileID: 375889721461676024}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3135015587362220390
 SpriteRenderer:
@@ -574,7 +574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 2.32
+  radius: 2.65
   height: 2
   canMove: 1
   maxSpeed: 3
@@ -586,7 +586,7 @@ MonoBehaviour:
   repathRateCompatibility: NaN
   canSearchCompability: 0
   orientation: 1
-  enableRotation: 1
+  enableRotation: 0
   autoRepath:
     mode: 2
     interval: 0.5
@@ -596,9 +596,9 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 0
-  slowdownDistance: 3.09
+  slowdownDistance: 2.74
   pickNextWaypointDist: 2
-  endReachedDistance: 2.84
+  endReachedDistance: 1.95
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 0
   whenCloseToDestination: 0
@@ -632,6 +632,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 20
   healthBar: {fileID: 4429930547835926475}
+  spawner: {fileID: 1310445150276707397, guid: dc66eb62ac5be41c4bd193356877f473, type: 3}
 --- !u!114 &1091539195108179223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,7 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 2907976113677595920, guid: 97a84f617df904128a1ea6edc356ddda, type: 3}
 --- !u!95 &8893231514466792781
 Animator:
   serializedVersion: 5

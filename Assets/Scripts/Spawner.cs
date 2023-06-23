@@ -65,8 +65,4 @@ public class Spawner : MonoBehaviour
          return unusedCoordinates;
      }
 
-
-        return unusedCoordinates;
-    }
-
 }
