@@ -28,46 +28,49 @@ public class Spawner : MonoBehaviour
             timer = timeSpawn;
             if (transform.childCount < maxEnemy)
             {
-                Instantiate(enemys[0], unusedCoordinates[Random.Range(0,unusedCoordinates.Count)], Quaternion.identity, transform);
+                Instantiate(enemys[0], unusedCoordinates[Random.Range(0, unusedCoordinates.Count)], Quaternion.identity,
+                    transform);
             }
         }
     }
+
     public void IncreaseKillCount()
     {
         killCount++;
     }
-    private List<Vector3> GetUnusedTileCoordinates()
-    {
-        List<Vector3> unusedCoordinates = new List<Vector3>();
+     private List<Vector3> GetUnusedTileCoordinates()
+     {
+         List<Vector3> unusedCoordinates = new List<Vector3>();
 
-        BoundsInt bounds = tilemap.cellBounds;
-        TileBase[] allTiles = tilemap.GetTilesBlock(bounds);
+         BoundsInt bounds = tilemap.cellBounds;
+         TileBase[] allTiles = tilemap.GetTilesBlock(bounds);
 
-        for (int x = bounds.xMin; x < bounds.xMax; x++)
-        {
-            for (int y = bounds.yMin; y < bounds.yMax; y++)
-            {
-                Vector3Int tilePosition = new Vector3Int(x, y, 0);
+         for (int x = bounds.xMin; x < bounds.xMax; x++)
+         {
+             for (int y = bounds.yMin; y < bounds.yMax; y++)
+             {
+                 Vector3Int tilePosition = new Vector3Int(x, y, 0);
 
-                if (tilemap.HasTile(tilePosition))
-                {
-      
-                    continue;
-                }
+                 if (tilemap.HasTile(tilePosition))
+                 {
+       
+                     continue;
+                 }
 
-                Tile.ColliderType colliderType = tilemap.GetColliderType(tilePosition);
-                if (colliderType != Tile.ColliderType.None)
-                {
-                    continue;
-                }
+                 Tile.ColliderType colliderType = tilemap.GetColliderType(tilePosition);
+                 if (colliderType != Tile.ColliderType.None)
+                 {
+                     continue;
+                 }
 
-                Vector3 worldPosition = tilemap.CellToWorld(tilePosition);
+                 Vector3 worldPosition = tilemap.CellToWorld(tilePosition);
 
-                unusedCoordinates.Add(worldPosition);
-            }
-        }
+                 unusedCoordinates.Add(worldPosition);
+             }
+         }
 
-        return unusedCoordinates;
-    }
+         return unusedCoordinates;
+     }
+
+
 }
-
