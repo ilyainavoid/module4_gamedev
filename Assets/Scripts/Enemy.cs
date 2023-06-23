@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float health, maxHealth;
+    public Animator animator;
     void Start()
     {
         health = maxHealth;
@@ -15,7 +16,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            //animation
+            animator.SetBool("IsDead", true);
             Destroy(gameObject);
         }
     }
