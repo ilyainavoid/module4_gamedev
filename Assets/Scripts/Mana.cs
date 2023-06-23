@@ -22,8 +22,13 @@ public class Mana : MonoBehaviour
             //no more mana
         }
     }
-    void GetMana()
+    public void GetMana(int mana)
     {
-        
+        currentMana += mana;
+        manaBar.SetMana(currentMana);
+        if (currentMana > maxMana)
+        {
+            currentMana = maxMana;  
+        }
     }
 }

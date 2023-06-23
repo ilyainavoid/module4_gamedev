@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private HealthBar bar;
+
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
             //deathScreen
         }
     }
-    void Heal(int hp)
+    public void Heal(int hp)
     {
         currentHealth += hp;
         healthBar.SetHealth(currentHealth);
