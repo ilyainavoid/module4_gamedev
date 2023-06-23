@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
             timer = timeSpawn;
             if (transform.childCount < maxEnemy)
             {
-                Instantiate(enemys[0], unusedCoordinates[Random.Range(0,unusedCoordinates.Count)], Quaternion.identity, transform);
+                Instantiate(enemys[0], unusedCoordinates[Random.Range(0, unusedCoordinates.Count)], Quaternion.identity, transform);
             }
         }
     }
@@ -49,15 +49,9 @@ public class Spawner : MonoBehaviour
             {
                 Vector3Int tilePosition = new Vector3Int(x, y, 0);
 
-                if (tilemap.HasTile(tilePosition))
+                if (!tilemap.HasTile(tilePosition))
                 {
-      
-                    continue;
-                }
 
-                Tile.ColliderType colliderType = tilemap.GetColliderType(tilePosition);
-                if (colliderType != Tile.ColliderType.None)
-                {
                     continue;
                 }
 
@@ -69,5 +63,6 @@ public class Spawner : MonoBehaviour
 
         return unusedCoordinates;
     }
+
 }
 
