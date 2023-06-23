@@ -113,7 +113,6 @@ GameObject:
   - component: {fileID: 3394487660074381575}
   - component: {fileID: 4962937531940713197}
   - component: {fileID: 1238885010880301131}
-  - component: {fileID: 4220327150449862189}
   - component: {fileID: 2907976113677595920}
   - component: {fileID: 3800278986385737771}
   m_Layer: 0
@@ -137,7 +136,7 @@ Transform:
   m_Children:
   - {fileID: 5187339051368941909}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3394487660074381575
 SpriteRenderer:
@@ -180,7 +179,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8953554ad2347446f85dad6b0b47497f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 463eea66df43dcb46bfd9b5cd1bc6a95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -234,41 +233,9 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 4962937531940713197}
   weapon: {fileID: 3737572092001372178}
---- !u!58 &4220327150449862189
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3929060646202838298}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.125
+  animator: {fileID: 0}
+  isLeftDirected: 0
+  isRightDirected: 0
 --- !u!114 &2907976113677595920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!114 &3800278986385737771
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -43,8 +43,6 @@ public class PlayerController : MonoBehaviour
         }
         animator.SetFloat("HorizontalMove", moveX);
         animator.SetFloat("VerticalMove", moveY);
-        animator.SetBool("isGoingLeft", isLeftDirected);
-        animator.SetBool("isGoingRight", isRightDirected);
         moveDirection = new Vector2(moveX, moveY).normalized;
         mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
     }
