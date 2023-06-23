@@ -5,11 +5,7 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     public Rigidbody2D rb;
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="other"></param>
+    public float damage = 10;
     void OnTriggerEnter2D(Collider2D other) 
     {
         switch (other.gameObject.tag)
@@ -19,7 +15,8 @@ public class Fireball : MonoBehaviour
                 break;
            case "Enemy":
                Destroy(gameObject);
-               Destroy(other.gameObject );
+               Enemy enemyScript = other.GetComponent<Enemy>();
+               enemyScript.TakeDamage(damage);
                break;
         }
     }
