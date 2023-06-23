@@ -5,22 +5,13 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     public Rigidbody2D rb;
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="other"></param>
-    void OnTriggerEnter2D(Collider2D other) 
+    public player
+    private void OnCollisionEnter2D(Collision2D collision) 
     {
-        switch (other.gameObject.tag)
+        if (collision.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
         {
-            case "Wall":
-                Destroy(gameObject);
-                break;
-           case "Enemy":
-               Destroy(gameObject);
-               Destroy(other.gameObject );
-               break;
+            enemyComponent.TakeDamage();
         }
+        Destroy(gameObject);
     }
 }
