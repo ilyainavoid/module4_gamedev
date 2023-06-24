@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public bool isLeftDirected = false;
     public bool isRightDirected = false;
+    public bool isMoving = false;
 
 
     void Update()
@@ -28,21 +29,35 @@ public class PlayerController : MonoBehaviour
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
-        if (Input.GetKeyDown(KeyCode.A)) {
+
+        if (Input.mousePosition.x < Screen.width / 2) {
             isLeftDirected = true;
             isRightDirected = false;
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.mousePosition.x >= Screen.width / 2)
         {
             isRightDirected = true;
             isLeftDirected = false;
         }
+
+        if (moveX != 0 || moveY != 0)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             weapon.Fire();
+            animator.SetTrigger("player_castsMagic");
         }
-        animator.SetFloat("HorizontalMove", moveX);
-        animator.SetFloat("VerticalMove", moveY);
+
+        animator.SetBool("player_RightDirected", isRightDirected);
+        animator.SetBool("player_LeftDirected", isLeftDirected);
+        animator.SetBool("player_isMoving", isMoving);
         moveDirection = new Vector2(moveX, moveY).normalized;
         mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
     }
