@@ -8,10 +8,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyHealthBar healthBar;
     public Animator animator;
 
-    [SerializeField] private Spawner spawner;
+    private ScoreManager score;
     private void Awake()
     {
         healthBar = GetComponentInChildren<EnemyHealthBar>();
+        score= FindObjectOfType<ScoreManager>();
     }
     void Start()
     {
@@ -26,7 +27,7 @@ public class Enemy : MonoBehaviour
         {
             animator.SetBool("IsDead", true);
             Destroy(gameObject);
-            spawner.IncreaseKillCount();
+            score.Kill();
         }
     }
 }

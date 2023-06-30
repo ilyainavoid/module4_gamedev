@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 8538006016460424091}
   - component: {fileID: 1091539195108179223}
   - component: {fileID: 8893231514466792781}
+  - component: {fileID: -8917670530132070974}
   m_Layer: 0
   m_Name: SigmaEnemy
   m_TagString: Enemy
@@ -434,7 +435,7 @@ Transform:
   m_Children:
   - {fileID: 375889721461676024}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3135015587362220390
 SpriteRenderer:
@@ -633,7 +634,6 @@ MonoBehaviour:
   maxHealth: 20
   healthBar: {fileID: 4429930547835926475}
   animator: {fileID: 8893231514466792781}
-  spawner: {fileID: 1310445150276707397, guid: dc66eb62ac5be41c4bd193356877f473, type: 3}
 --- !u!114 &1091539195108179223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,3 +669,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8917670530132070974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7998491976358027863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9998bbfcdbfa1347b2e2c90e2df1768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1779989793590800229, guid: 97a84f617df904128a1ea6edc356ddda, type: 3}
+  bulletPrefab: {fileID: 4512118236748736427, guid: 3fb79b143abdc1f478491b3704c7c907, type: 3}
+  firePoint: {fileID: 1502863105693848430}
+  fireRate: 1
