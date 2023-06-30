@@ -9,6 +9,12 @@ public class Enemy : MonoBehaviour
     public Mana playerMana;
     public int manaIncrease;
     public Animator animator;
+
+    private ScoreManager score;
+    private void Awake()
+    {
+        healthBar = GetComponentInChildren<EnemyHealthBar>();
+        score= FindObjectOfType<ScoreManager>();
     [SerializeField] private Spawner spawner;
     private void Awake()
     {
@@ -28,6 +34,7 @@ public class Enemy : MonoBehaviour
         {
             animator.SetBool("IsDead", true);
             Destroy(gameObject);
+            score.Kill();
             spawner.IncreaseKillCount();
             playerMana.GetMana(manaIncrease);
         }

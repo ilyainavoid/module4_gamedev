@@ -11,13 +11,11 @@ public class Spawner : MonoBehaviour
     private float timer;
     public Tilemap tilemap;
     List<Vector3> unusedCoordinates;
-    private int killCount;
 
     private void Start()
     {
         unusedCoordinates = GetUnusedTileCoordinates();
         timer = timeSpawn;
-        killCount = 0;
     }
 
     private void Update()
@@ -34,10 +32,6 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    public void IncreaseKillCount()
-    {
-        killCount++;
-    }
      private List<Vector3> GetUnusedTileCoordinates()
      {
          List<Vector3> unusedCoordinates = new List<Vector3>();
