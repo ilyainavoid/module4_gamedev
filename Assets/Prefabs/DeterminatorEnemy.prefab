@@ -524,7 +524,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 5.8514285, y: 5.8514285}
     newSize: {x: 0.4375, y: 0.46875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -632,8 +632,10 @@ MonoBehaviour:
   health: 0
   maxHealth: 20
   healthBar: {fileID: 4429930547835926475}
-  animator: {fileID: 0}
   spawner: {fileID: 1310445150276707397, guid: dc66eb62ac5be41c4bd193356877f473, type: 3}
+  playerMana: {fileID: 0}
+  manaIncrease: 0
+  animator: {fileID: 8893231514466792781}
 --- !u!114 &1091539195108179223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,7 +660,7 @@ Animator:
   m_GameObject: {fileID: 7998491976358027863}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 05f7a8fadb4989641bb90c44767ac1b4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
