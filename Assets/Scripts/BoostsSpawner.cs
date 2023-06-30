@@ -26,7 +26,6 @@ public class BoostsSpawner : MonoBehaviour
             if (transform.childCount < maxBoosts)
             {
                 int random = Random.Range(0, boosts.Length);
-                Debug.Log(random);
                 Instantiate(boosts[random], unusedCoordinates[Random.Range(0, unusedCoordinates.Count)], Quaternion.identity, transform);
             }
         }

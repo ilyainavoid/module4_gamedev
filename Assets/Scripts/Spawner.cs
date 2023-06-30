@@ -28,7 +28,8 @@ public class Spawner : MonoBehaviour
             timer = timeSpawn;
             if (transform.childCount < maxEnemy)
             {
-                Instantiate(enemys[0], unusedCoordinates[Random.Range(0, unusedCoordinates.Count)], Quaternion.identity, transform);
+                int random = Random.Range(0, enemys.Length);
+                Instantiate(enemys[random], unusedCoordinates[Random.Range(0, unusedCoordinates.Count)], Quaternion.identity, transform);
             }
         }
     }
