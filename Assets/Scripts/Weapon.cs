@@ -19,7 +19,10 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     public float fireForce;
 
-
+    public GameObject shield;
+    private bool isShieldActive = false;
+    private float shieldDuration = 10f; 
+    private float shieldTimer = 0f;
     public void Start ()
     {
         currentGun = guns[0];
@@ -36,14 +39,46 @@ public class Weapon : MonoBehaviour
             currentGun = guns[currentWeaponIndex];
             manaTake = 10;
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             currentWeaponIndex = 1;
             currentGun = guns[currentWeaponIndex];
             manaTake = 15;
         }
+
+        if (isShieldActive)
+        {
+            shieldTimer += Time.deltaTime;
+
+            if (shieldTimer >= shieldDuration)
+            {
+                DisableShield();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (!isShieldActive && manaScript.currentMana >= 40)
+            {
+                EnableShield();
+                
+                manaScript.TakeMana(40);
+            }
+        }
+    }
+    private void EnableShield()
+    {
+        isShieldActive = true;
+        shield.SetActive(true);
+        shieldTimer = 0f;
     }
 
+    private void DisableShield()
+    {
+        isShieldActive = false;
+        shield.SetActive(false);
+    }
     public void Fire()
     {
         if (manaScript.currentMana > 0)
