@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Camera sceneCamera;
-    public float moveSpeed;
+    public float speed;
+    public  float moveSpeed;
+    private float fastSpeed = 10;
+    public bool isRunning;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
     private Vector2 mousePosition;
@@ -15,14 +19,20 @@ public class PlayerController : MonoBehaviour
     public bool isRightDirected = false;
     public bool isMoving = false;
 
+    private void Start()
+    {
+        moveSpeed = speed;
+    }
 
     void Update()
     {
+        
         ProcessInputs();
     }
     void FixedUpdate()
     {
         Move();
+        Run();
     }
 
     void ProcessInputs()
@@ -67,4 +77,17 @@ public class PlayerController : MonoBehaviour
         Vector2 aimDirection = mousePosition - rb.position;
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
     }
+
+    private void Run()
+    {
+        if (isRunning)
+        {
+            moveSpeed = fastSpeed; 
+        }
+        else
+        {
+            moveSpeed = speed;
+        }
+    }
 }
+  

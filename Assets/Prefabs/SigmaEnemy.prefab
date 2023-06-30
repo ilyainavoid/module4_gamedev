@@ -632,6 +632,8 @@ MonoBehaviour:
   health: 0
   maxHealth: 20
   healthBar: {fileID: 4429930547835926475}
+  playerMana: {fileID: 0}
+  manaIncrease: 20
   animator: {fileID: 8893231514466792781}
   spawner: {fileID: 1310445150276707397, guid: dc66eb62ac5be41c4bd193356877f473, type: 3}
 --- !u!114 &1091539195108179223
