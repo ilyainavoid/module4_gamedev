@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
         ProcessInputs();
     }
     void FixedUpdate()
