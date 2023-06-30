@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
     public Animator animator;
+    public Rigidbody2D rb;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         currentHealth = maxHealth;
     }
 
@@ -22,9 +26,8 @@ public class PlayerHealth : MonoBehaviour
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
-            //dead
-            animator.SetTrigger("player_dies");
-            //deathScreen
+            Die();
+            RestartLevel();
         }
         else
         {
@@ -39,5 +42,16 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth = maxHealth;  
         }
+    }
+
+    public void Die()
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+        animator.SetTrigger("player_dies");
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
