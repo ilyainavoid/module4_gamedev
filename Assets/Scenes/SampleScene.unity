@@ -18470,6 +18470,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -778483317582341678, guid: 97a84f617df904128a1ea6edc356ddda, type: 3}
+      propertyPath: staminaBar
+      value: 
+      objectReference: {fileID: 574105156}
     - target: {fileID: 1238885010880301131, guid: 97a84f617df904128a1ea6edc356ddda, type: 3}
       propertyPath: sceneCamera
       value: 
@@ -18717,6 +18721,10 @@ Transform:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1310445150276707397, guid: dc66eb62ac5be41c4bd193356877f473, type: 3}
   m_PrefabInstance: {fileID: 2607915287453198683}
+--- !u!114 &574105156 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3527731275746607832, guid: aa2f4c59cc70446588655a6169ea8ed9, type: 3}
+  m_PrefabInstance: {fileID: 2015646808}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -18827,6 +18835,9 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+  m_Script: {fileID: 11500000, guid: bff992593004e46d68f1b231b3c946f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &812373329
 GameObject:
   m_ObjectHideFlags: 0
@@ -31924,6 +31935,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7592775945113356434, guid: aa2f4c59cc70446588655a6169ea8ed9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776543880634517798, guid: aa2f4c59cc70446588655a6169ea8ed9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776543880634517798, guid: aa2f4c59cc70446588655a6169ea8ed9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}

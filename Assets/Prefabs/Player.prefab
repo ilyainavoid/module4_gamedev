@@ -44,9 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27193e7d1d2874c7d88f7f4b2cbd220b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireball: {fileID: 6125146678488153916, guid: 7afd4ff99b3b44c73ab6ca02e5751930, type: 3}
+  guns:
+  - {fileID: 6125146678488153916, guid: 7afd4ff99b3b44c73ab6ca02e5751930, type: 3}
+  - {fileID: 1920159249344719753, guid: 23bb362d1d5a64eb990ada2af302fc83, type: 3}
+  currentWeaponIndex: 0
   firePoint: {fileID: 8136562785860411941}
-  fireForce: 20
+  fireForce: 15
 --- !u!1 &3929060646202838298
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,6 +66,7 @@ GameObject:
   - component: {fileID: 3800278986385737771}
   - component: {fileID: 3406851914932330377}
   - component: {fileID: 3290250200012056120}
+  - component: {fileID: -778483317582341678}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -178,7 +182,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneCamera: {fileID: 0}
-  moveSpeed: 5
+  speed: 5
+  moveSpeed: 0
+  isRunning: 0
   rb: {fileID: 4962937531940713197}
   weapon: {fileID: 3737572092001372178}
   animator: {fileID: 3406851914932330377}
@@ -282,6 +288,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.25, y: 2.25}
   m_EdgeRadius: 0
+--- !u!114 &-778483317582341678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3929060646202838298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e763960a295451c950c62f409e153d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalStamina: 100
+  stamina: 0
+  staminaBar: {fileID: 0}
 --- !u!1 &4812142998661371756
 GameObject:
   m_ObjectHideFlags: 0
