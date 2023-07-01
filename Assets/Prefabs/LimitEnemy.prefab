@@ -467,7 +467,7 @@ Transform:
   - {fileID: 375889721461676024}
   - {fileID: 267051105925388895}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3135015587362220390
 SpriteRenderer:
@@ -663,11 +663,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 20
+  maxHealth: 60
   healthBar: {fileID: 4429930547835926475}
   spawner: {fileID: 1310445150276707397, guid: dc66eb62ac5be41c4bd193356877f473, type: 3}
   playerMana: {fileID: 0}
-  manaIncrease: 0
+  manaIncrease: 20
   animator: {fileID: 0}
 --- !u!114 &1091539195108179223
 MonoBehaviour:
@@ -716,5 +716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411ac1bc4cbc247a19326032af0302d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrow: {fileID: 3223572895583273279, guid: a00e0696151474adbba49e91134112ea, type: 3}
-  arrowPos: {fileID: 267051105925388895}
+  weapon: {fileID: 3223572895583273279, guid: a00e0696151474adbba49e91134112ea, type: 3}
+  weaponPos: {fileID: 267051105925388895}
+  viewDistance: 10

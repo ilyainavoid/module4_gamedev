@@ -9,6 +9,7 @@ public class Arrow : MonoBehaviour
     public GameObject player;
     private Rigidbody2D rb;
     public float force = 7;
+    public int damage;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,7 +26,7 @@ public class Arrow : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerHealth health = player.GetComponentInChildren<PlayerHealth>(); 
-            health.TakeDamage(25);
+            health.TakeDamage(damage);
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Wall"))

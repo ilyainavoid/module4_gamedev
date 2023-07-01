@@ -21,6 +21,11 @@ public class Snowflake : MonoBehaviour
                 enemySpeed.maxSpeed *= 0.5f;
                 enemyScript.TakeDamage(damage);
                 break;
+            case "Boss":
+                Destroy(gameObject);
+                Enemy bossScript = other.GetComponent<Enemy>();
+                bossScript.TakeDamage(damage);
+                break;
         }
     }
 }

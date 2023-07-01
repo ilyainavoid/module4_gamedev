@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public Mana playerMana;
     public int manaIncrease;
     public Animator animator;
-
+    private int timer;
     private ScoreManager score;
     private void Awake()
     {
@@ -22,11 +22,32 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        if (gameObject.CompareTag("Enemy"))
+        {
+            
+        }
+        else
+        {
+            if (timer > 3)
+                        {
+                            timer = 0;
+                            InvokeRepeating("HealthIncreasing", 0f, 1f);
+                        }
+        }
     }
-
+    
+    void HealthIncreasing()
+    {
+        if (health < maxHealth)
+        {
+                    
+            health += 2f;
+            healthBar.UpdateEnemyHealthBar(health);
+        }
+    }
+    
     public void TakeDamage(float damage)
     {
-        animator.SetTrigger("isAttacked");
         health -= damage;
         healthBar.UpdateEnemyHealthBar(health);
         if (health <= 0)
@@ -37,6 +58,10 @@ public class Enemy : MonoBehaviour
             }
             Destroy(gameObject);
             score.Kill();
+            if (gameObject.CompareTag("Boss"))
+            {
+                // the end
+            }
             playerMana.GetMana(manaIncrease);
         }
     }

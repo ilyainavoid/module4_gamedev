@@ -5,34 +5,50 @@ using UnityEngine.Tilemaps;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject[] enemys;
+    public GameObject[] enemys = new GameObject[5];
     public int maxEnemy = 5;
     public float timeSpawn = 5f;
     private float timer;
     public Tilemap tilemap;
     List<Vector3> unusedCoordinates;
-
+    public bool spawnBoss;
+    private bool bossSpawned;
+    private int currentWave;
+    public WaveManager waveManageer;
     private void Start()
     {
         unusedCoordinates = GetUnusedTileCoordinates();
         timer = timeSpawn;
+        currentWave = waveManageer.currentWave;
     }
 
     private void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0)
-        {
-            timer = timeSpawn;
-            if (transform.childCount < maxEnemy)
+        currentWave = waveManageer.currentWave;
+        
+            timer -= Time.deltaTime;
+            if (timer <= 0)
             {
-                int random = Random.Range(0, enemys.Length);
-                Instantiate(enemys[random], unusedCoordinates[Random.Range(0, unusedCoordinates.Count)], Quaternion.identity, transform);
+                timer = timeSpawn;
+                if (transform.childCount < maxEnemy)
+                {
+                    if (spawnBoss)
+                    {
+                        Instantiate(enemys[4], unusedCoordinates[Random.Range(0, unusedCoordinates.Count)],
+                            Quaternion.identity, transform);
+                    }
+                    else if (!spawnBoss)
+                    {
+                        int random = Random.Range(0, currentWave - 1);
+                        Instantiate(enemys[random], unusedCoordinates[Random.Range(0, unusedCoordinates.Count)],
+                            Quaternion.identity, transform);
+                    }
+                }
             }
-        }
+
     }
 
-     private List<Vector3> GetUnusedTileCoordinates()
+    private List<Vector3> GetUnusedTileCoordinates()
      {
          List<Vector3> unusedCoordinates = new List<Vector3>();
 

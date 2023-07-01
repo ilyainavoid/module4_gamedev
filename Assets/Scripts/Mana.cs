@@ -5,7 +5,7 @@ using UnityEngine;
 public class Mana : MonoBehaviour
 {
 
-    public float maxMana = 100;
+    public float maxMana = 200;
     public float currentMana;
     public ManaBar manaBar;
     void Start()
@@ -20,7 +20,7 @@ public class Mana : MonoBehaviour
                 if (currentMana < 100)
                 {
                     
-                    currentMana += 2.5f ;
+                    currentMana += 5f;
                     manaBar.SetMana(currentMana);
                 }
     }

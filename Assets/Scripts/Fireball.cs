@@ -18,6 +18,11 @@ public class Fireball : MonoBehaviour
                Enemy enemyScript = other.GetComponent<Enemy>();
                enemyScript.TakeDamage(damage);
                break;
+            case "Boss":
+                Destroy(gameObject);
+                Enemy bossScript = other.GetComponent<Enemy>();
+                bossScript.TakeDamage(damage);
+                break;
         }
     }
 }
