@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
     public Animator animator;
     public Rigidbody2D rb;
+    public GameoverScript gameoverScript;
 
     void Start()
     {
@@ -27,7 +28,8 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-            RestartLevel();
+            Invoke("RestartLevel", 0.3f);
+            gameoverScript.Setup();
         }
         else
         {
@@ -52,6 +54,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
