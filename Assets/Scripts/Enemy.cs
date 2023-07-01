@@ -30,7 +30,10 @@ public class Enemy : MonoBehaviour
         healthBar.UpdateEnemyHealthBar(health);
         if (health <= 0)
         {
-            animator.SetTrigger("isDead");
+            if (animator != null)
+            {
+                 animator.SetTrigger("isDead");
+            }
             Destroy(gameObject);
             score.Kill();
             playerMana.GetMana(manaIncrease);
