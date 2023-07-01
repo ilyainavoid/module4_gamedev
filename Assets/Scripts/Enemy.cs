@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        animator.SetTrigger("isAttacked");
         health -= damage;
         healthBar.UpdateEnemyHealthBar(health);
         if (health <= 0)
