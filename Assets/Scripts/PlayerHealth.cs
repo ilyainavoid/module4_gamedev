@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-            RestartLevel();
+            Invoke("RestartLevel", 0.3f);
         }
         else
         {
