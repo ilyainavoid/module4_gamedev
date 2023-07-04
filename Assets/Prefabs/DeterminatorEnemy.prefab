@@ -85,9 +85,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 20
+  m_MaxValue: 80
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 80
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -542,7 +542,7 @@ Transform:
   - {fileID: 375889721461676024}
   - {fileID: 7987471105500856034}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3135015587362220390
 SpriteRenderer:

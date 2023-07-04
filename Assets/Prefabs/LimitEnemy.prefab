@@ -116,9 +116,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 20
+  m_MaxValue: 60
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 60
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 2.65
+  radius: 2.39
   height: 2
   canMove: 1
   maxSpeed: 3
@@ -668,7 +668,7 @@ MonoBehaviour:
   spawner: {fileID: 1310445150276707397, guid: dc66eb62ac5be41c4bd193356877f473, type: 3}
   playerMana: {fileID: 0}
   manaIncrease: 20
-  animator: {fileID: 0}
+  animator: {fileID: 8893231514466792781}
 --- !u!114 &1091539195108179223
 MonoBehaviour:
   m_ObjectHideFlags: 0

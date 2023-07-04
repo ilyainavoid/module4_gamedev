@@ -362,6 +362,9 @@ MonoBehaviour:
   maxEnemy: 10
   timeSpawn: 2
   tilemap: {fileID: 1213793542}
+  spawnBoss: 0
+  bossSpawned: 0
+  waveManageer: {fileID: 0}
 --- !u!4 &1126771059
 Transform:
   m_ObjectHideFlags: 0

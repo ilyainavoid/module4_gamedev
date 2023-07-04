@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
     public Tilemap tilemap;
     List<Vector3> unusedCoordinates;
     public bool spawnBoss;
-    private bool bossSpawned;
+    public bool bossSpawned;
     private int currentWave;
     public WaveManager waveManageer;
     private void Start()
@@ -32,10 +32,12 @@ public class Spawner : MonoBehaviour
                 timer = timeSpawn;
                 if (transform.childCount < maxEnemy)
                 {
-                    if (spawnBoss)
+                    if (spawnBoss && !bossSpawned)
                     {
                         Instantiate(enemys[4], unusedCoordinates[Random.Range(0, unusedCoordinates.Count)],
                             Quaternion.identity, transform);
+                        spawnBoss = false;
+                        bossSpawned = true;
                     }
                     else if (!spawnBoss)
                     {

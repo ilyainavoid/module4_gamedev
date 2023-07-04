@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -394.8, y: -272.97}
+  m_AnchoredPosition: {x: -135.24, y: -93.21}
   m_SizeDelta: {x: 186.4978, y: 37.8112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9019445055171135195
@@ -85,9 +85,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 20
+  m_MaxValue: 5
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -589,7 +589,7 @@ MonoBehaviour:
   healthBar: {fileID: 4429930547835926475}
   spawner: {fileID: 1310445150276707397, guid: dc66eb62ac5be41c4bd193356877f473, type: 3}
   playerMana: {fileID: 0}
-  manaIncrease: 0
+  manaIncrease: 10
   animator: {fileID: 0}
 --- !u!114 &1091539195108179223
 MonoBehaviour:
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d231355b401f4f15bd53118cdbdd5c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 5
   playerHealth: {fileID: 2907976113677595920, guid: 97a84f617df904128a1ea6edc356ddda, type: 3}
 --- !u!95 &8893231514466792781
 Animator:

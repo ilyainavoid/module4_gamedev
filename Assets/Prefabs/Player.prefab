@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087936771046690910}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.1999999, z: 0}
+  m_LocalPosition: {x: -0.19, y: -1.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,12 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27193e7d1d2874c7d88f7f4b2cbd220b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manaTake: 10
   guns:
   - {fileID: 6125146678488153916, guid: 7afd4ff99b3b44c73ab6ca02e5751930, type: 3}
   - {fileID: 1920159249344719753, guid: 23bb362d1d5a64eb990ada2af302fc83, type: 3}
   currentWeaponIndex: 0
   firePoint: {fileID: 8136562785860411941}
   fireForce: 15
+  shield: {fileID: 0}
 --- !u!1 &3929060646202838298
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +209,8 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 0}
   animator: {fileID: 0}
+  rb: {fileID: 0}
+  gameoverScript: {fileID: 0}
 --- !u!114 &3800278986385737771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4812142998661371756}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0062625706, y: 1.8550025, z: 0}
+  m_LocalPosition: {x: 0.286, y: 0.014, z: 0}
   m_LocalScale: {x: 0.1272, y: 0.3204, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

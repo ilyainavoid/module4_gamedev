@@ -48,21 +48,28 @@ public class Enemy : MonoBehaviour
     
     public void TakeDamage(float damage)
     {
+   
         health -= damage;
-        healthBar.UpdateEnemyHealthBar(health);
+        healthBar.UpdateEnemyHealthBar(health); 
         if (health <= 0)
         {
-            if (animator != null)
-            {
-                 animator.SetTrigger("isDead");
-            }
-            Destroy(gameObject);
+            
+            animator.SetTrigger("isDead");
             score.Kill();
+            Destroy(gameObject);
             if (gameObject.CompareTag("Boss"))
             {
                 // the end
             }
+
             playerMana.GetMana(manaIncrease);
         }
+
+
+        animator.SetTrigger("isAttacked");
+        
+        
+        
+        
     }
 }

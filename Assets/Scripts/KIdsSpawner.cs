@@ -29,8 +29,8 @@ public class KIdsSpawner : MonoBehaviour
 
     void SpawnKid()
     {
-        randomX = Random.Range(transform.position.x-2,transform.position.x + 2);
-        randomY = Random.Range(transform.position.y-2,transform.position.y + 2);
+        randomX = Random.Range(transform.position.x-1.5f ,transform.position.x + 1.5f);
+        randomY = Random.Range(transform.position.y-1.5f,transform.position.y + 1.5f);
         whereToSpawn = new Vector2(randomX, randomY);
         int random = Random.Range(0, kids.Length);
         GameObject Kid = Instantiate(kids[random], whereToSpawn, Quaternion.identity);
